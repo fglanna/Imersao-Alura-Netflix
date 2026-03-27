@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("perfilAtivoNome", nome);
       localStorage.setItem("perfilAtivoImagem", img);
 
-      window.location.href = "/catalogo/catalogo.html";
+      // use caminho relativo para GitHub Pages em repo não root
+      window.location.href = "catalogo/catalogo.html";
     });
   });
 });
