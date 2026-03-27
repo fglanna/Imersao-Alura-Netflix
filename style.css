@@ -29,7 +29,8 @@ body {
   align-items: center;
   min-height: 100vh;
   min-width: 320px; /* Evita embolo em telas muito pequenas */
-  overflow: hidden; /* Evita scrolls durante a animação */
+  overflow-x: hidden; /* Evita scroll horizontal */
+  overflow-y: auto; /* Permite rolar para ver todos perfis no mobile */
 }
 
 /* 2. Header e Logo */
@@ -147,6 +148,7 @@ h1 {
   list-style: none;
   opacity: 0; /* Começa invisível */
   animation: fadeInSlide 0.8s ease-out forwards;
+  min-width: 100px;
 }
 
 /* Delays para o efeito "um por um" */
@@ -259,13 +261,19 @@ h1 {
   }
 
   .profiles-list {
-    gap: 1rem;
+    gap: 0.8rem;
     padding: 0 0.5rem;
+    justify-content: center;
+  }
+
+  .profile-item {
+    flex: 0 0 45%;
+    max-width: 45%;
   }
 
   .profile-link img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
   }
 
   .profile-link figcaption {
