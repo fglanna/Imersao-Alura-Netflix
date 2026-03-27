@@ -45,4 +45,20 @@ class ThemeManager {
 // Initialize theme manager when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   new ThemeManager();
+
+  // Profile selection functionality
+  const profileButtons = document.querySelectorAll(".profile-link");
+
+  profileButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const nome = btn.dataset.name;
+      const img = btn.dataset.img;
+      if (!nome || !img) return;
+
+      localStorage.setItem("perfilAtivoNome", nome);
+      localStorage.setItem("perfilAtivoImagem", img);
+
+      window.location.href = "/catalogo/catalogo.html";
+    });
+  });
 });
