@@ -14,13 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (profileIcon) {
       // trato caminhos relativos para funcionar em catalogo/ e na raiz
       let imgPath = imagemPerfil;
-      if (!imgPath.startsWith("http") && !imgPath.startsWith("/")) {
-        // Se o valor for 'assets/...', ajusta para catalogo/ => '../assets/...'
-        if (imgPath.startsWith("assets/")) {
-          imgPath = "../" + imgPath;
-        }
+      if (imgPath.startsWith('/assets/')) {
+        imgPath = '..' + imgPath;
+      } else if (imgPath.startsWith('assets/')) {
+        imgPath = '../' + imgPath;
       }
-      profileIcon.src = imgPath;
+      profileIcon.src = encodeURI(imgPath);
     }
   }
 
