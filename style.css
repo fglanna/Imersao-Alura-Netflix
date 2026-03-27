@@ -162,6 +162,12 @@ h1 {
 .profile-item:nth-child(4) {
   animation-delay: 1.1s;
 }
+.profile-item:nth-child(5) {
+  animation-delay: 1.4s;
+}
+.profile-item:nth-child(6) {
+  animation-delay: 1.7s;
+}
 
 /* 6. Estilos do Link/Botão do Perfil */
 .profile-link {
